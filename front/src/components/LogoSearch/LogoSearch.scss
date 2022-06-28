@@ -1,0 +1,36 @@
+.LogoSearch {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  .logo {
+    max-width: 100%;
+  }
+  .Search {
+    display: flex;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 5px;
+    justify-content: space-between;
+    input {
+      width: 90%;
+      min-height: 2rem;
+      border-radius: 20px;
+      border: none;
+      text-align: center;
+      font-size: 1rem;
+    }
+    .s-icon {
+      display: flex;
+      align-self: center;
+      color: black;
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      padding: 0.2em 0 0.2em 0.5em;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    }
+  }
+}

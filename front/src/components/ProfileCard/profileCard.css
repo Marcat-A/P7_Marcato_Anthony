@@ -1,0 +1,152 @@
+.ProfileCard {
+  border-radius: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  gap: 1rem;
+  overflow-x: clip;
+  background-color: #f3f3f3;
+}
+
+.ProfileCard > span {
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  cursor: pointer;
+}
+
+.ProfileCard .ProfileImages {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ProfileCard .ProfileImages > img:nth-of-type(1) {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  min-height: 10rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.ProfileCard .ProfileImages > img:nth-of-type(2) {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 60px;
+  position: absolute;
+  bottom: -3rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -webkit-box-shadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25);
+}
+
+.ProfileCard .ProfileName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3rem;
+  gap: 10px;
+}
+
+.ProfileCard .ProfileName > span:nth-of-type(1) {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.ProfileCard .followStatus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.75rem;
+}
+
+.ProfileCard .followStatus > hr {
+  width: 85%;
+  border: 1px solid black;
+}
+
+.ProfileCard .followStatus > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  width: 80%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ProfileCard .followStatus .follow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.4rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ProfileCard .followStatus .follow > span:nth-of-type(1) {
+  font-weight: bold;
+}
+
+.ProfileCard .followStatus .follow > span:nth-of-type(2) {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+}
+
+.ProfileCard .followStatus .vl {
+  height: 120%;
+  border-left: 2px solid black;
+}
+/*# sourceMappingURL=profileCard.css.map */

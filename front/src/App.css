@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 :root {
-  --primary-color:#FD2D01;
-  --secondary-color:#FFD7D7;
-  --tertiary-color:#4E5166;
-  --font-family: 'Lato', sans-serif;
-  --black-color:#242d49;
+  --primary-color: #fd2d01;
+  --secondary-color: #ffd7d7;
+  --tertiary-color: #4e5166;
+  --font-family: "Lato", sans-serif;
+  --black-color: #242d49;
 }
 
 * {
@@ -30,5 +30,35 @@
   background-color: var(--primary-color);
   -webkit-filter: blur(72px);
           filter: blur(72px);
+}
+
+.App .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: white;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.App .btn:hover {
+  cursor: pointer;
+  letter-spacing: 1px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 /*# sourceMappingURL=App.css.map */

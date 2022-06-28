@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
-:root{
-    --primary-color:#FD2D01;
-    --secondary-color:#FFD7D7;
-    --tertiary-color:#4E5166;
-    --font-family: 'Lato', sans-serif;
-    --black-color:#242d49;
+:root {
+  --primary-color: #fd2d01;
+  --secondary-color: #ffd7d7;
+  --tertiary-color: #4e5166;
+  --font-family: "Lato", sans-serif;
+  --black-color: #242d49;
 }
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: var(--font-family);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
 }
