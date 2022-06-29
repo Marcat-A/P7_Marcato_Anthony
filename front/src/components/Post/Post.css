@@ -7,9 +7,16 @@
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 1rem;
-  background-color: var(--secondary-color);
+  background-color: #f3f3f3;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
   gap: 1rem;
+}
+
+.Post .likes {
+  font-size: 14px;
+  color: var(--tertiary-color);
 }
 
 .Post > img {
@@ -33,6 +40,16 @@
 .Post .postReact > svg {
   font-size: 1.5rem;
   color: var(--tertiary-color);
+  cursor: pointer;
+  color: #251b1b;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.Post .postReact > svg:hover {
+  color: var(--primary-color);
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
 }
 
 .Post .postReact > svg.fa-heart-circle-check {

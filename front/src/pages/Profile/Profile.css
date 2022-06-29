@@ -1,1 +1,20 @@
-/* No CSS *//*# sourceMappingURL=Profile.css.map */
+.Profile {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 18rem auto 20rem;
+      grid-template-columns: 18rem auto 20rem;
+  gap: 1rem;
+}
+
+.Profile .Profile-Center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+/*# sourceMappingURL=Profile.css.map */

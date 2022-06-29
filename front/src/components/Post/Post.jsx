@@ -1,12 +1,12 @@
 import React from "react";
 import "./Post.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeartCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import {
-  faHeartCircleCheck,
-  faCommentDots,
-  faShare,
-} from "@fortawesome/free-solid-svg-icons";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
+  faHeart,
+  faComment,
+  faShareFromSquare,
+} from "@fortawesome/free-regular-svg-icons";
 
 const Post = ({ data }) => {
   return (
@@ -14,10 +14,10 @@ const Post = ({ data }) => {
       <img src={data.img} alt="" />
       <div className="postReact">
         <FontAwesomeIcon icon={data.liked ? faHeartCircleCheck : faHeart} />
-        <FontAwesomeIcon icon={faCommentDots} />
-        <FontAwesomeIcon icon={faShare} />
+        <FontAwesomeIcon icon={faComment} />
+        <FontAwesomeIcon icon={faShareFromSquare} />
       </div>
-      <span>{data.likes} likes</span>
+      <span className="likes">{data.likes} likes</span>
       <div className="detail">
         <span>
           <b>{data.name}</b>

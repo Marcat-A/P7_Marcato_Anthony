@@ -18,6 +18,16 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.RightSide .navIcons > svg {
+  background-color: #f3f3f3;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--primary-color);
 }
 
 .RightSide .r-btn {
@@ -26,5 +36,10 @@
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  color: var(--primary-color);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  border: 1px solid var(--primary-color);
 }
 /*# sourceMappingURL=RightSide.css.map */

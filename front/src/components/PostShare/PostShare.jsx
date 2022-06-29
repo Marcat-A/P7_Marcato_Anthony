@@ -28,23 +28,19 @@ const PostShare = () => {
       <div>
         <input type="text" placeholder="What's Happening?" />
         <div className="postOptions">
-          <div
-            className="option"
-            style={{ color: "var(--primary-color)" }}
-            onClick={() => imageRef.current.click()}
-          >
+          <div className="option" onClick={() => imageRef.current.click()}>
             <FontAwesomeIcon icon={faImages} />
             Photo
           </div>
-          <div className="option" style={{ color: "var(--secondary-color)" }}>
+          <div className="option">
             <FontAwesomeIcon icon={faCirclePlay} />
             Video
           </div>
-          <div className="option" style={{ color: "var(--primary-color)" }}>
+          <div className="option">
             <FontAwesomeIcon icon={faCompass} />
             Location
           </div>
-          <div className="option" style={{ color: "var(--secondary-color)" }}>
+          <div className="option">
             <FontAwesomeIcon icon={faCalendarCheck} />
             Schedule
           </div>

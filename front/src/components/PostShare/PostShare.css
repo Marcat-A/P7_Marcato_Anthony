@@ -3,9 +3,11 @@
   display: -ms-flexbox;
   display: flex;
   gap: 1rem;
-  background-color: var(--secondary-color);
+  background-color: #f3f3f3;
   padding: 1rem;
   border-radius: 1rem;
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
 }
 
 .PostShare .previewImage {
@@ -36,6 +38,8 @@
   font-size: 1.2rem;
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
 }
 
 .PostShare > img {
@@ -46,6 +50,8 @@
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .PostShare > div {
@@ -61,7 +67,7 @@
 }
 
 .PostShare > div > input {
-  background-color: lightgrey;
+  background-color: var(--secondary-color);
   border-radius: 10px;
   padding: 10px;
   font-size: 1.5rem;
@@ -78,8 +84,7 @@
 }
 
 .PostShare > div .postOptions .option {
-  padding: 5px;
-  padding-inline: 10px;
+  padding: 5px 10px 5px 10px;
   border-radius: 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -88,9 +93,21 @@
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 1.2rem;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .PostShare > div .postOptions .option:hover {
   cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.PostShare > div .postOptions .option > svg {
+  margin-right: 5px;
 }
 /*# sourceMappingURL=PostShare.css.map */

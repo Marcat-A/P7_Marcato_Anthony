@@ -11,6 +11,14 @@
 
 .LogoSearch .logo {
   max-width: 100%;
+  max-height: 3rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
 }
 
 .LogoSearch .Search {
@@ -40,7 +48,7 @@
   display: flex;
   -ms-flex-item-align: center;
       align-self: center;
-  color: black;
+  color: var(--primary-color);
   font-size: 1.5rem;
   font-weight: bold;
   -webkit-transition: all 0.3s ease;

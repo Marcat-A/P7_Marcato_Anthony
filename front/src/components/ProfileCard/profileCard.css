@@ -11,11 +11,13 @@
   gap: 1rem;
   overflow-x: clip;
   background-color: #f3f3f3;
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 
 .ProfileCard > span {
   font-weight: bold;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   margin-bottom: 1rem;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -47,6 +49,7 @@
   -o-object-position: center;
      object-position: center;
   min-height: 10rem;
+  max-height: 20rem;
   border-radius: 1.5rem 1.5rem 0 0;
 }
 
@@ -82,6 +85,11 @@
 .ProfileCard .ProfileName > span:nth-of-type(1) {
   font-weight: bold;
   font-size: 1.2em;
+  color: var(--primary-color);
+}
+
+.ProfileCard .ProfileName > span:nth-of-type(2) {
+  font-style: italic;
 }
 
 .ProfileCard .followStatus {
@@ -103,7 +111,7 @@
 
 .ProfileCard .followStatus > hr {
   width: 85%;
-  border: 1px solid black;
+  border: 1px solid var(--secondary-color);
 }
 
 .ProfileCard .followStatus > div {
@@ -141,12 +149,13 @@
 }
 
 .ProfileCard .followStatus .follow > span:nth-of-type(2) {
-  color: var(--secondary-color);
-  font-size: 1.1rem;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-style: italic;
 }
 
 .ProfileCard .followStatus .vl {
   height: 120%;
-  border-left: 2px solid black;
+  border-left: 1px solid var(--secondary-color);
 }
 /*# sourceMappingURL=profileCard.css.map */

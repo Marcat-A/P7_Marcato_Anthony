@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../img/icon-left-font-monochrome-black.svg";
+import Logo from "../../img/icon-left-font.png";
 import "./LogoSearch.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";

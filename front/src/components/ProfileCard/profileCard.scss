@@ -6,9 +6,10 @@
   gap: 1rem;
   overflow-x: clip;
   background-color: #f3f3f3;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   > span {
     font-weight: bold;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     margin-bottom: 1rem;
     align-self: center;
     cursor: pointer;
@@ -24,6 +25,7 @@
       object-fit: cover;
       object-position: center;
       min-height: 10rem;
+      max-height: 20rem;
       border-radius: 1.5rem 1.5rem 0 0;
     }
     > img:nth-of-type(2) {
@@ -46,6 +48,10 @@
     > span:nth-of-type(1) {
       font-weight: bold;
       font-size: 1.2em;
+      color: var(--primary-color);
+    }
+    > span:nth-of-type(2) {
+      font-style: italic;
     }
   }
   .followStatus {
@@ -56,7 +62,7 @@
     gap: 0.75rem;
     > hr {
       width: 85%;
-      border: 1px solid black;
+      border: 1px solid var(--secondary-color);
     }
     > div {
       display: flex;
@@ -75,13 +81,14 @@
         font-weight: bold;
       }
       > span:nth-of-type(2) {
-        color: var(--secondary-color);
-        font-size: 1.1rem;
+        color: var(--primary-color);
+        font-size: 1rem;
+        font-style: italic;
       }
     }
     .vl {
       height: 120%;
-      border-left: 2px solid black;
+      border-left: 1px solid var(--secondary-color);
     }
   }
 }
