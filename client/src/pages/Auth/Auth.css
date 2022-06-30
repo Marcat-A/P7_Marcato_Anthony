@@ -1,0 +1,120 @@
+.Auth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  gap: 4rem;
+  position: relative;
+}
+
+.Auth .alredy {
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.Auth .authForm {
+  background-color: #f3f3f3;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.Auth .authForm > div {
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Auth > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Auth .a-left {
+  gap: 2rem;
+  width: 500px;
+  height: 300px;
+}
+
+.Auth img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+}
+
+.Auth .a-right {
+  width: 40%;
+  background-color: #f3f3f3;
+}
+
+.Auth .infoForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.Auth .infoForm > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  height: 2rem;
+  width: 100%;
+}
+
+.Auth .infoForm .infoInput {
+  border: none;
+  outline: none;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  padding: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.Auth .infoForm .info-btn {
+  width: 6rem;
+  height: 2rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+/*# sourceMappingURL=Auth.css.map */
