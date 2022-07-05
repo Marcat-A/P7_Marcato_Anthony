@@ -7,10 +7,11 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.75rem;
+  width: 100%;
 }
 
-.LogoSearch .logo {
-  max-width: 100%;
+.LogoSearch > a > .logo {
+  width: 100%;
   max-height: 3rem;
   -o-object-fit: cover;
      object-fit: cover;
@@ -19,46 +20,5 @@
   border-radius: 1rem;
   -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
-}
-
-.LogoSearch .Search {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: var(--secondary-color);
-  border-radius: 10px;
-  padding: 5px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.LogoSearch .Search input {
-  width: 90%;
-  min-height: 2rem;
-  border-radius: 20px;
-  border: none;
-  text-align: center;
-  font-size: 1rem;
-}
-
-.LogoSearch .Search .s-icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-item-align: center;
-      align-self: center;
-  color: var(--primary-color);
-  font-size: 1.5rem;
-  font-weight: bold;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  padding: 0.2em 0 0.2em 0.5em;
-}
-
-.LogoSearch .Search .s-icon:hover {
-  cursor: pointer;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 /*# sourceMappingURL=LogoSearch.css.map */

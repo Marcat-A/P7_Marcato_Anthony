@@ -1,6 +1,10 @@
 import PostModel from "../models/postModel.js";
 import mongoose from "mongoose";
 import UserModel from "../models/userModel.js";
+import fs from "fs-extra";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const createPost = async (req, res) => {
   const newPost = new PostModel(req.body);
@@ -35,23 +39,29 @@ export const updatePost = async (req, res) => {
       res.status(403).json("Action forbidden");
     }
   } catch {
-    res.status(500).json(err);
+    res.status(500).json(req.body);
   }
 };
 
 export const deletePost = async (req, res) => {
-  const postId = req.params.id;
-  const { userId } = req.body;
+  const id = req.params.id;
+
   try {
-    const post = await PostModel.findById(postId);
-    if (post.userId === userId) {
-      await post.deleteOne();
-      res.status(200).json("Post deleted successfully");
+    const post = await PostModel.findById(id);
+    if (post.info) {
+      if (post.image) {
+        await post.deleteOne();
+        fs.unlink("public/images/" + post.image);
+        res.status(200).json("Post deleted.");
+      } else {
+        await post.deleteOne();
+        res.status(200).json("Post deleted.");
+      }
     } else {
-      res.status(403).json("Action forbidden");
+      res.status(403).json({ message: user });
     }
-  } catch (err) {
-    res.status(500).json(err);
+  } catch (error) {
+    res.status(500).json(error);
   }
 };
 

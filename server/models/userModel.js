@@ -30,6 +30,7 @@ const UserSchema = mongoose.Schema(
     relationship: String,
     followers: [],
     following: [],
+    country: String,
   },
   { timestamps: true }
 );

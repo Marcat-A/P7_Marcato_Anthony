@@ -15,6 +15,13 @@
       border-radius: 50%;
       border: 1px solid var(--primary-color);
     }
+    > a > svg {
+      background-color: #f3f3f3;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      border-radius: 50%;
+      border: 1px solid var(--primary-color);
+    }
   }
   .r-btn {
     height: 3rem;

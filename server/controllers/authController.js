@@ -13,7 +13,7 @@ export const registerUser = async (req, res) => {
     const oldUser = await UserModel.findOne({ username });
 
     if (oldUser) {
-      return res.status(400).json({ message: "Username is alredy registered" });
+      return res.status(400).json(" > Username is alredy registered < ");
     }
     const user = await newUser.save();
     const token = jwt.sign(
@@ -35,7 +35,7 @@ export const loginUser = async (req, res) => {
     if (user) {
       const validity = await bcrypt.compare(password, user.password);
       if (!validity) {
-        res.status(400).json("Wrong Password");
+        res.status(400).json(" > Wrong Password < ");
       } else {
         const token = jwt.sign(
           { username: user.username, id: user._id },
@@ -45,7 +45,7 @@ export const loginUser = async (req, res) => {
         res.status(200).json({ user, token });
       }
     } else {
-      res.status(404).json("User does not exists");
+      res.status(404).json(" > User does not exists < ");
     }
   } catch (err) {
     res.status(500).json({ message: err.message });

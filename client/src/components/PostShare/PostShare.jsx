@@ -1,18 +1,13 @@
 import React, { useState, useRef } from "react";
-import ProfileImg from "../../img/profilImage.jpg";
+import ProfileImg from "../../img/profilImage.png";
 import "./PostShare.css";
-import {
-  faImages,
-  faCirclePlay,
-  faCompass,
-  faCalendarCheck,
-  faCircleXmark,
-} from "@fortawesome/free-regular-svg-icons";
+import { faImages, faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
 import { uploadImage, uploadPost } from "../../actions/UploadAction";
 
 const PostShare = () => {
+  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
   const loading = useSelector((state) => state.postReducer.uploading);
   const [image, setImage] = useState(null);
   const imageRef = useRef();
@@ -37,6 +32,8 @@ const PostShare = () => {
     const newPost = {
       userId: user._id,
       desc: desc.current.value,
+      name: user.name,
+      info: user.username,
     };
 
     if (image) {
@@ -57,30 +54,24 @@ const PostShare = () => {
   };
   return (
     <div className="PostShare">
-      <img src={ProfileImg} alt="Person profil" />
+      <img
+        src={
+          user.profilePicture ? serverPublic + user.profilePicture : ProfileImg
+        }
+        alt="Person profil"
+      />
       <div>
         <input
           type="text"
           placeholder="What's Happening?"
           ref={desc}
+          info={user.name}
           required
         />
         <div className="postOptions">
           <div className="option" onClick={() => imageRef.current.click()}>
             <FontAwesomeIcon icon={faImages} />
             Photo
-          </div>
-          <div className="option">
-            <FontAwesomeIcon icon={faCirclePlay} />
-            Video
-          </div>
-          <div className="option">
-            <FontAwesomeIcon icon={faCompass} />
-            Location
-          </div>
-          <div className="option">
-            <FontAwesomeIcon icon={faCalendarCheck} />
-            Schedule
           </div>
           <button
             className="btn ps-btn"

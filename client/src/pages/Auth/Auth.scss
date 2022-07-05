@@ -5,6 +5,11 @@
   height: 100vh;
   gap: 4rem;
   position: relative;
+  #errors {
+    color: var(--primary-color);
+    font-size: 13px;
+    animation: 3s linear infinite fade;
+  }
   .alredy {
     font-size: 13px;
     cursor: pointer;
@@ -70,5 +75,17 @@
       color: var(--primary-color);
       border: 1px solid var(--primary-color);
     }
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

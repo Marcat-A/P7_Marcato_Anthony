@@ -11,7 +11,11 @@
     height: 14rem;
     border-radius: 50%;
     background-color: var(--primary-color);
-    filter: blur(72px);
+    filter: blur(92px);
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
   }
   .btn {
     display: flex;

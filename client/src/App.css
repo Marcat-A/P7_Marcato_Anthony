@@ -28,8 +28,13 @@
   height: 14rem;
   border-radius: 50%;
   background-color: var(--primary-color);
-  -webkit-filter: blur(72px);
-          filter: blur(72px);
+  -webkit-filter: blur(92px);
+          filter: blur(92px);
+}
+
+.App a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .App .btn {

@@ -1,30 +1,30 @@
 export const TrendData = [
   {
     name: "Test",
-    shares: 100,
+    shares: 10540,
   },
   {
-    name: "Test",
-    shares: 100,
+    name: "Lala",
+    shares: 14500,
   },
   {
-    name: "Test",
-    shares: 100,
+    name: "Lolo",
+    shares: 1065520,
   },
   {
-    name: "Test",
-    shares: 100,
+    name: "Lulu",
+    shares: 10525250,
   },
   {
-    name: "Test",
-    shares: 100,
+    name: "Toto",
+    shares: 105250,
   },
   {
-    name: "Test",
-    shares: 100,
+    name: "Tata",
+    shares: 1024240,
   },
   {
-    name: "Test",
-    shares: 100,
+    name: "Tutu",
+    shares: 1252500,
   },
 ];

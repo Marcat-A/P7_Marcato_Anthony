@@ -1,5 +1,11 @@
 const postReducer = (
-  state = { posts: [], loading: false, error: false, uploading: false },
+  state = {
+    posts: [],
+    loading: false,
+    error: false,
+    uploading: false,
+    deleting: false,
+  },
   action
 ) => {
   switch (action.type) {
@@ -11,6 +17,17 @@ const postReducer = (
         posts: [action.data, ...state.posts],
         uploading: false,
         error: false,
+      };
+    case "DELETING_START":
+      return { ...state, error: false, deleting: true };
+    case "DELETING_SUCCESS":
+      return {
+        ...state,
+        posts: [
+          ...state.posts.filter((post) => {
+            return post.id !== post._id;
+          }),
+        ],
       };
     default:
       return state;

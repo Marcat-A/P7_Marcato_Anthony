@@ -6,11 +6,11 @@ const TrendCard = () => {
   return (
     <div className="TrendCard">
       <h3>Trends for you</h3>
-      {TrendData.map((trend) => {
+      {TrendData.map((trend, key) => {
         return (
-          <div className="trend">
-            <span>#{trend.name}</span>
-            <span>{trend.shares}k shares</span>
+          <div className="trend" key={trend.name}>
+            <span key={trend.name}>#{trend.name}</span>
+            <span key={trend.shares}>{trend.shares}k shares</span>
           </div>
         );
       })}

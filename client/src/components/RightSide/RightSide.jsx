@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import {
   faArchway,
   faGear,
@@ -15,7 +16,9 @@ const RightSide = () => {
   return (
     <div className="RightSide">
       <div className="navIcons">
-        <FontAwesomeIcon icon={faArchway} />
+        <Link to="../home">
+          <FontAwesomeIcon icon={faArchway} />
+        </Link>
         <FontAwesomeIcon icon={faGear} />
         <FontAwesomeIcon icon={faDragon} />
         <FontAwesomeIcon icon={faMessage} />

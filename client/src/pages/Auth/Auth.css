@@ -13,6 +13,13 @@
   position: relative;
 }
 
+.Auth #errors {
+  color: var(--primary-color);
+  font-size: 13px;
+  -webkit-animation: 3s linear infinite fade;
+          animation: 3s linear infinite fade;
+}
+
 .Auth .alredy {
   font-size: 13px;
   cursor: pointer;
@@ -116,5 +123,29 @@
       align-self: flex-end;
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 /*# sourceMappingURL=Auth.css.map */

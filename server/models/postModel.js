@@ -6,8 +6,9 @@ const postSchema = mongoose.Schema(
     desc: String,
     likes: [],
     image: String,
+    info: String,
   },
-  { timestramps: true }
+  { timestamps: true }
 );
 
 const PostModel = mongoose.model("Posts", postSchema);

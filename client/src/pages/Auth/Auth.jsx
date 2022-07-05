@@ -37,6 +37,8 @@ const Auth = () => {
 
   const resetForm = () => {
     setConfirmPass(true);
+    const zone = document.getElementById("errors");
+    zone.innerHTML = "";
     setData({
       firstname: "",
       lastname: "",
@@ -45,7 +47,6 @@ const Auth = () => {
       username: "",
     });
   };
-  console.log(loading);
   return (
     <div className="Auth">
       <div className="a-left">
@@ -127,6 +128,7 @@ const Auth = () => {
                 : "Don't have an account ??"}{" "}
             </span>
           </div>
+          <div id="errors"></div>
           <button className="btn info-btn" type="submit" disabled={loading}>
             {loading ? "Loading..." : isSignUp ? "Signup" : "Log In"}
           </button>

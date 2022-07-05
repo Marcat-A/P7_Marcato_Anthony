@@ -1,4 +1,5 @@
 import * as AuthApi from "../api/AuthRequest";
+
 export const logIn = (formData, navigate) => async (dispatch) => {
   dispatch({ type: "AUTH_START" });
   try {
@@ -6,6 +7,8 @@ export const logIn = (formData, navigate) => async (dispatch) => {
     dispatch({ type: "AUTH_SUCCESS", data: data });
     navigate("../home", { replace: true });
   } catch (error) {
+    const zone = document.getElementById("errors");
+    zone.innerHTML = error.request.response;
     console.log(error);
     dispatch({ type: "AUTH_FAIL" });
   }
@@ -18,6 +21,8 @@ export const signUp = (formData, navigate) => async (dispatch) => {
     dispatch({ type: "AUTH_SUCCESS", data: data });
     navigate("../home", { replace: true });
   } catch (error) {
+    const zone = document.getElementById("errors");
+    zone.innerHTML = error.request.response;
     console.log(error);
     dispatch({ type: "AUTH_FAIL" });
   }
