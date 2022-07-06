@@ -3,6 +3,7 @@
 # dependencies
 server/node_modules
 /node_modules
+/newSQLServer/node_modules
 /.pnp
 .pnp.js
 

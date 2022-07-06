@@ -1,7 +1,11 @@
 import React from "react";
 import "./Post.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeartCircleCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHeartCircleCheck,
+  faPen,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faHeart,
   faComment,
@@ -9,37 +13,49 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { deletePost, likePost } from "../../api/PostRequest";
+import { deletePost, likePost, unLikePost } from "../../actions/PostAction";
 const moment = require("moment");
 
 const Post = ({ data }) => {
   const { user } = useSelector((state) => state.authReducer.authData);
-  const [liked, setLiked] = useState(data.likes.includes(user._id));
-  const [likes, setLikes] = useState(data.likes.length);
+  const liked = data.likes.includes(user._id);
   const date = moment(data.createdAt).calendar();
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
 
   const handleLike = () => {
-    setLiked((prev) => !prev);
-    likePost(data._id, user._id);
-    liked ? setLikes((prev) => prev - 1) : setLikes((prev) => prev + 1);
+    liked
+      ? dispatch(unLikePost(data._id, user._id))
+      : dispatch(likePost(data._id, user._id));
   };
+
+  const handleUpdate = () => {};
 
   const handleDelete = () => {
     if (window.confirm("Do you really want to delete this post ??")) {
-      deletePost(data._id, user._id);
-      dispatch(deletePost(data._id));
+      dispatch(deletePost(data._id, user._id));
     } else {
       console.log("Deleted aborted");
     }
   };
   return (
     <div className="Post">
-      <FontAwesomeIcon
-        icon={faXmark}
-        className="deletePost"
-        onClick={handleDelete}
-      />
+      {user._id === data.userId ? (
+        <>
+          <FontAwesomeIcon
+            icon={faXmark}
+            className="deletePost"
+            onClick={handleDelete}
+          />
+          <FontAwesomeIcon
+            icon={faPen}
+            className="modifPost"
+            onClick={handleUpdate}
+          />
+        </>
+      ) : (
+        ""
+      )}
+
       <img
         src={data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ""}
         alt=""
@@ -49,7 +65,9 @@ const Post = ({ data }) => {
         <span> {data.desc}</span>
       </div>
       <span className="likes">
-        {likes >= 2 ? `${likes}  likes` : `${likes} like`}
+        {data.likes.length >= 2
+          ? `${data.likes.length}  likes`
+          : `${data.likes.length} like`}
       </span>
       <div className="postReact">
         <FontAwesomeIcon
