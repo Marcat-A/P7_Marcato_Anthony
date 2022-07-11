@@ -21,6 +21,7 @@
   color: var(--black-color);
   background-color: #f3f3f3;
   padding: 1rem;
+  width: 100%;
 }
 
 .App .blur {

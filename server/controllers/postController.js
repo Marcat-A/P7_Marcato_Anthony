@@ -28,16 +28,14 @@ export const getPost = async (req, res) => {
 };
 
 export const updatePost = async (req, res) => {
-  const postId = req.params.id;
-  const { userId } = req.body;
+  const id = req.params.id;
   try {
-    const post = await PostModel.findById(postId);
-    if (post.userId === userId) {
-      await post.updateOne({ $set: req.body });
-      res.status(200).json("Post Updated");
-    } else {
-      res.status(403).json("Action forbidden");
+    const post = await PostModel.findById(id);
+    if (post.image) {
+      fs.unlink("public/images/" + post.image);
     }
+    await post.updateOne({ $set: req.body });
+    res.status(200).json("Post Updated");
   } catch {
     res.status(500).json(req.body);
   }
@@ -77,6 +75,17 @@ export const likePost = async (req, res) => {
       await post.updateOne({ $push: { likes: userId } });
       res.status(200).json("Post liked");
     }
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+export const commentPost = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const post = await PostModel.findById(id);
+    await post.updateOne({ $push: { comments: req.data } });
+    res.status(200).json("Comment Added");
   } catch (error) {
     res.status(500).json(error);
   }

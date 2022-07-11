@@ -32,6 +32,19 @@ export const likePost = (id, userId) => async (dispatch) => {
     console.log(error);
   }
 };
+export const commentPost = (id, comment) => async (dispatch) => {
+  dispatch({ type: "COMMENT_START" });
+  try {
+    await PostApi.commentPost(id, comment);
+    dispatch({
+      type: "COMMENT_SUCCESS",
+      data: { postId: id, comment },
+    });
+  } catch (error) {
+    dispatch({ type: "COMMENT_FAIL" });
+    console.log(error);
+  }
+};
 
 export const unLikePost = (id, userId) => async (dispatch) => {
   dispatch({ type: "UNLIKE_START" });

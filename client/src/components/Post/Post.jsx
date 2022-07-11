@@ -1,19 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Post.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHeartCircleCheck,
-  faPen,
-  faXmark,
-} from "@fortawesome/free-solid-svg-icons";
+import { faHeartCircleCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 import {
   faHeart,
   faComment,
   faShareFromSquare,
 } from "@fortawesome/free-regular-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
 import { deletePost, likePost, unLikePost } from "../../actions/PostAction";
+import PostUpdateModal from "../PostUpdateModal/PostUpdateModal";
+import Comment from "../Comment/Comment";
 const moment = require("moment");
 
 const Post = ({ data }) => {
@@ -21,6 +18,9 @@ const Post = ({ data }) => {
   const liked = data.likes.includes(user._id);
   const date = moment(data.createdAt).calendar();
   const dispatch = useDispatch();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [commentOpen, setCommentOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleLike = () => {
     liked
@@ -28,7 +28,14 @@ const Post = ({ data }) => {
       : dispatch(likePost(data._id, user._id));
   };
 
-  const handleUpdate = () => {};
+  const showComment = () => {
+    commentOpen ? setCommentOpen(false) : setCommentOpen(true);
+  };
+  const showImage = () => {
+    isOpen ? setIsOpen(false) : setIsOpen(true);
+  };
+
+  // console.log(data);
 
   const handleDelete = () => {
     if (window.confirm("Do you really want to delete this post ??")) {
@@ -46,10 +53,10 @@ const Post = ({ data }) => {
             className="deletePost"
             onClick={handleDelete}
           />
-          <FontAwesomeIcon
-            icon={faPen}
-            className="modifPost"
-            onClick={handleUpdate}
+          <PostUpdateModal
+            modalOpen={modalOpen}
+            setModalOpen={setModalOpen}
+            data={data}
           />
         </>
       ) : (
@@ -59,7 +66,17 @@ const Post = ({ data }) => {
       <img
         src={data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ""}
         alt=""
+        onClick={showImage}
       />
+      {isOpen && (
+        <dialog open className="dialog">
+          <img
+            src={process.env.REACT_APP_PUBLIC_FOLDER + data.image}
+            alt=""
+            onClick={showImage}
+          />
+        </dialog>
+      )}
 
       <div className="detail">
         <span> {data.desc}</span>
@@ -74,12 +91,16 @@ const Post = ({ data }) => {
           icon={liked ? faHeartCircleCheck : faHeart}
           onClick={handleLike}
         />
-        <FontAwesomeIcon icon={faComment} />
-        <FontAwesomeIcon icon={faShareFromSquare} />
+        <FontAwesomeIcon icon={faComment} onClick={showComment} />
       </div>
       <div className="created">
         @{data.info} - {date}
       </div>
+      {commentOpen ? (
+        <Comment data={data} setCommentOpen={setCommentOpen} />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

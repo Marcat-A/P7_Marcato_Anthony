@@ -15,6 +15,11 @@ const Posts = () => {
   });
   if (!posts) return "No Posts";
   if (params.id) posts = posts.filter((post) => post.userId === params.id);
+  posts.sort(function (a, b) {
+    const dateA = new Date(a.createdAt),
+      dateB = new Date(b.createdAt);
+    return dateB - dateA;
+  });
   return (
     <div className="Posts">
       {loading

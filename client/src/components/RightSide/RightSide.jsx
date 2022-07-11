@@ -20,10 +20,8 @@ const RightSide = () => {
           <FontAwesomeIcon icon={faArchway} />
         </Link>
         <FontAwesomeIcon icon={faGear} />
-        <FontAwesomeIcon icon={faDragon} />
-        <FontAwesomeIcon icon={faMessage} />
       </div>
-      <TrendCard />
+      {/* <TrendCard /> */}
       <button className="btn r-btn" onClick={() => setModalOpened(true)}>
         Share
       </button>

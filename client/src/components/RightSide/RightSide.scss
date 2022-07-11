@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  height: 100%;
   .navIcons {
     display: flex;
     margin-top: 1rem;
-    justify-content: space-between;
+    justify-content: space-evenly;
     font-size: 1.5rem;
     color: var(--primary-color);
     > svg {

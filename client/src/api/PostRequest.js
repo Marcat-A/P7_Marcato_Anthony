@@ -14,3 +14,6 @@ export const deletePost = (id, userId) =>
 
 export const updatePost = (id, userId) =>
   API.put(`/posts/${id}`, { userId: userId });
+
+export const commentPost = (id, userId) =>
+  API.put(`/posts/${id}/comment`, { userId: userId });

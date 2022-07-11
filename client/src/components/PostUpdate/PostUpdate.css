@@ -1,4 +1,4 @@
-.PostShare {
+.PostUpdate {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,11 +10,11 @@
           box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
 }
 
-.PostShare .previewImage {
+.PostUpdate .previewImage {
   position: relative;
 }
 
-.PostShare .previewImage > svg {
+.PostUpdate .previewImage > svg {
   position: absolute;
   right: 1rem;
   top: 0.5rem;
@@ -23,7 +23,7 @@
   cursor: pointer;
 }
 
-.PostShare .previewImage > img {
+.PostUpdate .previewImage > img {
   width: 100%;
   max-height: 20rem;
   -o-object-fit: cover;
@@ -33,26 +33,16 @@
   border-radius: 0.5rem;
 }
 
-.PostShare .ps-btn {
+.PostUpdate .ps-btn {
   padding: 5px 40px 5px 40px;
   font-size: 1.2rem;
-  border: 1px solid white;
-  color: white;
-  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
   -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 
-.PostShare .ps-btn:hover {
-  color: var(--primary-color);
-  border-color: var(--primary-color);
-  background-color: white;
-}
-
-.PostShare > img {
+.PostUpdate > img {
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
@@ -64,7 +54,7 @@
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-.PostShare > div {
+.PostUpdate > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,7 +66,7 @@
   gap: 1rem;
 }
 
-.PostShare > div > input {
+.PostUpdate > div > input {
   background-color: var(--secondary-color);
   border-radius: 10px;
   padding: 10px;
@@ -85,7 +75,7 @@
   outline: none;
 }
 
-.PostShare > div .postOptions {
+.PostUpdate > div .postOptions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,7 +83,7 @@
       justify-content: space-around;
 }
 
-.PostShare > div .postOptions .option {
+.PostUpdate > div .postOptions .option {
   padding: 5px 10px 5px 10px;
   border-radius: 10px;
   -webkit-box-align: center;
@@ -111,13 +101,13 @@
   transition: all 0.3s ease;
 }
 
-.PostShare > div .postOptions .option:hover {
+.PostUpdate > div .postOptions .option:hover {
   cursor: pointer;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.PostShare > div .postOptions .option > svg {
+.PostUpdate > div .postOptions .option > svg {
   margin-right: 5px;
 }
-/*# sourceMappingURL=PostShare.css.map */
+/*# sourceMappingURL=PostUpdate.css.map */

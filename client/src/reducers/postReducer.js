@@ -7,6 +7,8 @@ const postReducer = (
     deleting: false,
     like: false,
     unlike: false,
+    updating: false,
+    commenting: false,
   },
   action
 ) => {
@@ -30,6 +32,8 @@ const postReducer = (
             return action.data.postId !== post._id;
           }),
         ],
+        error: false,
+        deleting: false,
       };
     case "LIKE_START":
       return { ...state, error: false, like: true };
@@ -46,6 +50,8 @@ const postReducer = (
           }),
           postLike,
         ],
+        error: false,
+        like: false,
       };
     case "UNLIKE_START":
       return { ...state, error: false, unlike: true };
@@ -68,6 +74,49 @@ const postReducer = (
       return {
         ...state,
         posts: [...unchangedPostList, postUnlike],
+        error: false,
+        unlike: false,
+      };
+    case "UPDATE_START":
+      return { ...state, error: false, updating: true };
+    case "UPDATE_SUCCESS":
+      // Step 1 : Récupération du post
+      const postUpdate = state.posts.find((post) => {
+        return action.data.postId === post._id;
+      });
+      // Step 2 : Récupération des autres posts
+      const postNoUpdate = state.posts.filter((post) => {
+        return action.data.postId !== post._id;
+      });
+      // Step 3 : Modification du post récupéré
+
+      postUpdate.desc = action.data.userId.desc;
+      postUpdate.image = action.data.userId.image;
+
+      // Step 4 : Retour de tout les posts
+      return {
+        ...state,
+        posts: [...postNoUpdate, postUpdate],
+      };
+    case "COMMENT_START":
+      return { ...state, error: false, commenting: true };
+    case "COMMENT_SUCCESS":
+      // Step 1 : Récupération du post
+      const postComment = state.posts.find((post) => {
+        return action.data.postId === post._id;
+      });
+      // Step 2 : Récupération des autres posts
+      const postNoComment = state.posts.filter((post) => {
+        return action.data.postId !== post._id;
+      });
+      // Step 3 : Modification du post récupéré
+      postComment.comments.push(action.data.comment);
+
+      // Step 4 : Retour de tout les posts
+      console.log(action.data);
+      return {
+        ...state,
+        posts: [...postNoComment, postComment],
       };
     default:
       return state;
