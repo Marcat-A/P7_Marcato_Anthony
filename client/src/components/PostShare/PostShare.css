@@ -120,4 +120,11 @@
 .PostShare > div .postOptions .option > svg {
   margin-right: 5px;
 }
+
+@media (max-width: 767px) {
+  .PostShare > img {
+    width: 100px;
+    height: 100px;
+  }
+}
 /*# sourceMappingURL=PostShare.css.map */

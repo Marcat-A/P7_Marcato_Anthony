@@ -4,6 +4,8 @@ const authReducer = (
     loading: false,
     error: false,
     updateLoading: false,
+    following: false,
+    unfollowing: false,
   },
   action
 ) => {
@@ -41,16 +43,43 @@ const authReducer = (
         updateLoading: false,
       };
 
-    case "FOLLOW_USER":
+    case "FOLLOW_START":
+      // return {
+      //   ...state,
+      //   authData: {
+      //     ...state.authData,
+      //     user: {
+      //       ...state.authData.user,
+      //       following: [...state.authData.user.following, action.data],
+      //     },
+      //   },
+      // };
+      return { ...state, error: false, following: true };
+
+    case "FOLLOW_SUCCESS":
+      const userLiked = state.authData.find((user) => {
+        console.log(user);
+        return action.person !== user._id;
+      });
+
+      console.log("blabla");
+
+      userLiked.following.push(action.data.userId);
+
       return {
         ...state,
-        authData: {
-          ...state.authData,
-          user: {
-            ...state.authData.user,
-            following: [...state.authData.user.following, action.data],
-          },
-        },
+        users: [
+          ...state.user.filter((user) => {
+            return action.data.id !== user._id;
+          }),
+        ],
+      };
+
+    case "FOLLOW_FAIL":
+      return {
+        ...state,
+        error: true,
+        following: false,
       };
 
     case "UNFOLLOW_USER":

@@ -92,3 +92,25 @@
     }
   }
 }
+
+@media (max-width: 1023px) {
+  .ProfileCard {
+    width: 100%;
+
+    .ProfileImages {
+      > img:nth-of-type(1) {
+        min-height: 0;
+        max-height: 200px;
+      }
+      > img:nth-of-type(2) {
+        width: 150px;
+        height: 150px;
+        bottom: -75px;
+      }
+    }
+
+    .ProfileName {
+      margin-top: 75px;
+    }
+  }
+}

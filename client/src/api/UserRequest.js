@@ -12,11 +12,12 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
-export const getUser = (userId) => API.get(`/user/${userId}`);
+export const getUser = (userId) => API.get(`/users/${userId}`);
 
-export const updateUser = (id, formData) => API.put(`/user/${id}`, formData);
+export const updateUser = (id, formData) => API.put(`/users/${id}`, formData);
 
-export const getAllUser = () => API.get("/user");
+export const getAllUser = () => API.get("/users");
 
-export const followUser = (id, data) => API.put(`/user/${id}/follow`, data);
-export const unFollowUser = (id, data) => API.put(`/user/${id}/unfollow`, data);
+export const followUser = (id, data) => API.put(`/users/${id}/follow`, data);
+export const unFollowUser = (id, data) =>
+  API.put(`/users/${id}/unfollow`, data);

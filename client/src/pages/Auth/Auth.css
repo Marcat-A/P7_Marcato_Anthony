@@ -148,4 +148,24 @@
     opacity: 0;
   }
 }
+
+@media (max-width: 1023px) {
+  .Auth {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  .Auth .a-left {
+    width: 70%;
+    height: 100px;
+  }
+  .Auth .a-right {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=Auth.css.map */

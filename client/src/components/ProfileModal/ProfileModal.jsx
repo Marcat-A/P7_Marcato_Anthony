@@ -40,6 +40,7 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
       UserData.profilePicture = filename;
       try {
         dispatch(uploadImage(data));
+        console.log(formData);
       } catch (error) {
         console.log(error);
       }
@@ -73,9 +74,9 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
       opened={modalOpened}
       onClose={() => setModalOpened(false)}
     >
-      <form action="" className="infoForm">
-        <h3>Your Infos</h3>
-        <div>
+      {window.matchMedia("(max-width:767px)").matches ? (
+        <form action="" className="infoForm">
+          <h3>Your Infos</h3>
           <input
             type="text"
             className="infoInput"
@@ -92,8 +93,6 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
             onChange={handleChange}
             value={formData.lastname || ""}
           />
-        </div>
-        <div>
           <input
             type="text"
             className="infoInput"
@@ -102,8 +101,6 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
             onChange={handleChange}
             value={formData.worksAt || ""}
           />
-        </div>
-        <div>
           <input
             type="text"
             className="infoInput"
@@ -120,8 +117,6 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
             onChange={handleChange}
             value={formData.country || ""}
           />
-        </div>
-        <div>
           <input
             type="text"
             className="infoInput"
@@ -130,17 +125,84 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
             onChange={handleChange}
             value={formData.relationship || ""}
           />
-        </div>
-        <div>
           Profile Image
           <input type="file" name="profileImage" onChange={onImageChange} />
           Cover Image
           <input type="file" name="coverImage" onChange={onImageChange} />
-        </div>
-        <button className="btn info-btn" onClick={handleSubmit}>
-          Update
-        </button>
-      </form>
+          <button className="btn info-btn" onClick={handleSubmit}>
+            Update
+          </button>
+        </form>
+      ) : (
+        <form action="" className="infoForm">
+          <h3>Your Infos</h3>
+          <div>
+            <input
+              type="text"
+              className="infoInput"
+              name="firstName"
+              placeholder="Firstname"
+              onChange={handleChange}
+              value={formData.firstname || ""}
+            />
+            <input
+              type="text"
+              className="infoInput"
+              name="lastName"
+              placeholder="LastName"
+              onChange={handleChange}
+              value={formData.lastname || ""}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              className="infoInput"
+              name="worksAt"
+              placeholder="Work At"
+              onChange={handleChange}
+              value={formData.worksAt || ""}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              className="infoInput"
+              name="livesin"
+              placeholder="Lives In"
+              onChange={handleChange}
+              value={formData.livesin || ""}
+            />
+            <input
+              type="text"
+              className="infoInput"
+              name="country"
+              placeholder="Country"
+              onChange={handleChange}
+              value={formData.country || ""}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              className="infoInput"
+              name="relationship"
+              placeholder="Relationship Status"
+              onChange={handleChange}
+              value={formData.relationship || ""}
+            />
+          </div>
+          <div>
+            Profile Image
+            <input type="file" name="profileImage" onChange={onImageChange} />
+            Cover Image
+            <input type="file" name="coverImage" onChange={onImageChange} />
+          </div>
+          <button className="btn info-btn" onClick={handleSubmit}>
+            Update
+          </button>
+        </form>
+      )}
     </Modal>
   );
 }

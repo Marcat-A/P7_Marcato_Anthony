@@ -2,15 +2,12 @@ import React, { useState } from "react";
 import "./Post.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeartCircleCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
-import {
-  faHeart,
-  faComment,
-  faShareFromSquare,
-} from "@fortawesome/free-regular-svg-icons";
+import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { deletePost, likePost, unLikePost } from "../../actions/PostAction";
 import PostUpdateModal from "../PostUpdateModal/PostUpdateModal";
-import Comment from "../Comment/Comment";
+import CreateComment from "../CreateComment/CreateComment";
+import Comments from "../Comments/Comments";
 const moment = require("moment");
 
 const Post = ({ data }) => {
@@ -46,7 +43,7 @@ const Post = ({ data }) => {
   };
   return (
     <div className="Post">
-      {user._id === data.userId ? (
+      {user._id === data.userId || user.isAdmin === true ? (
         <>
           <FontAwesomeIcon
             icon={faXmark}
@@ -97,10 +94,11 @@ const Post = ({ data }) => {
         @{data.info} - {date}
       </div>
       {commentOpen ? (
-        <Comment data={data} setCommentOpen={setCommentOpen} />
+        <CreateComment data={data} setCommentOpen={setCommentOpen} />
       ) : (
         ""
       )}
+      <Comments listComments={data.comments} />
     </div>
   );
 };

@@ -27,3 +27,9 @@
     align-self: flex-end;
   }
 }
+
+@media (max-width: 767px) {
+  .infoForm {
+    gap: 30px;
+  }
+}

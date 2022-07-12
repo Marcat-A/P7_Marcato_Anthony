@@ -89,3 +89,17 @@
     opacity: 0;
   }
 }
+@media (max-width: 1023px) {
+  .Auth {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .a-left {
+      width: 70%;
+      height: 100px;
+    }
+    .a-right {
+      width: 100%;
+    }
+  }
+}

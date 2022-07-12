@@ -34,3 +34,9 @@
     border: 1px solid var(--primary-color);
   }
 }
+
+@media (max-width: 1023px) {
+  .RightSide {
+    display: none;
+  }
+}

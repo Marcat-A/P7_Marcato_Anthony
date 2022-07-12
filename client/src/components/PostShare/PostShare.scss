@@ -83,3 +83,12 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .PostShare {
+    > img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}

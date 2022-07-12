@@ -37,6 +37,6 @@ mongoose
   });
 
 app.use("/auth", authRoute);
-app.use("/user", userRoute);
+app.use("/users", userRoute);
 app.use("/posts", postRoute);
 app.use("/upload", uploadRoute);

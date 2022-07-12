@@ -10,12 +10,22 @@ export const updateUser = (id, formData) => async (dispatch) => {
   }
 };
 
-export const followUser = (id, data) => async (dispatch) => {
-  dispatch({ type: "FOLLOW_USER" });
-  UserApi.followUser(id, data);
+export const followUser = (person, user) => async (dispatch) => {
+  dispatch({ type: "FOLLOW_START" });
+  try {
+    const { data } = await UserApi.followUser(person, user);
+    dispatch({ type: "FOLLOW_SUCCESS", data: data });
+  } catch (error) {
+    dispatch({ type: "FOLLOW_FAIL" });
+  }
 };
 
 export const unFollowUser = (id, data) => async (dispatch) => {
   dispatch({ type: "UNFOLLOW_USER" });
-  UserApi.unFollowUser(id, data);
+  try {
+    const { toto } = await UserApi.unFollowUser(id, data);
+    dispatch({ type: "UNFOLLOW_SUCCESS", toto: toto });
+  } catch (error) {
+    dispatch({ type: "UNFOLLOW_FAIL" });
+  }
 };

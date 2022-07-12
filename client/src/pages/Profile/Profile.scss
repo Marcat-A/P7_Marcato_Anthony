@@ -9,3 +9,10 @@
     gap: 1rem;
   }
 }
+
+@media (max-width: 1023px) {
+  .Profile {
+    display: flex;
+    flex-direction: column;
+  }
+}

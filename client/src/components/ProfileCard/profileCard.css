@@ -158,4 +158,22 @@
   height: 120%;
   border-left: 1px solid var(--secondary-color);
 }
+
+@media (max-width: 1023px) {
+  .ProfileCard {
+    width: 100%;
+  }
+  .ProfileCard .ProfileImages > img:nth-of-type(1) {
+    min-height: 0;
+    max-height: 200px;
+  }
+  .ProfileCard .ProfileImages > img:nth-of-type(2) {
+    width: 150px;
+    height: 150px;
+    bottom: -75px;
+  }
+  .ProfileCard .ProfileName {
+    margin-top: 75px;
+  }
+}
 /*# sourceMappingURL=profileCard.css.map */

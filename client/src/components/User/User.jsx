@@ -13,8 +13,8 @@ const User = ({ person }) => {
   const dispatch = useDispatch();
   const handleFollow = () => {
     following
-      ? dispatch(unFollowUser(person._id, user))
-      : dispatch(followUser(person._id, user));
+      ? dispatch(unFollowUser(person._id, user._id))
+      : dispatch(followUser(person._id, user._id));
     setFollowing((prev) => !prev);
   };
   return (

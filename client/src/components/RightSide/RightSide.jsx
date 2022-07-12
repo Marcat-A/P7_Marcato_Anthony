@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import {
-  faArchway,
-  faGear,
-  faDragon,
-  faMessage,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArchway, faGear } from "@fortawesome/free-solid-svg-icons";
 import "./RightSide.css";
-import TrendCard from "../TrendCard/TrendCard";
 import ShareModal from "../ShareModal/ShareModal";
 
 const RightSide = () => {
