@@ -32,8 +32,6 @@ const Post = ({ data }) => {
     isOpen ? setIsOpen(false) : setIsOpen(true);
   };
 
-  // console.log(data);
-
   const handleDelete = () => {
     if (window.confirm("Do you really want to delete this post ??")) {
       dispatch(deletePost(data._id, user._id));

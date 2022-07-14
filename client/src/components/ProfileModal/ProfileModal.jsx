@@ -40,7 +40,6 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
       UserData.profilePicture = filename;
       try {
         dispatch(uploadImage(data));
-        console.log(formData);
       } catch (error) {
         console.log(error);
       }

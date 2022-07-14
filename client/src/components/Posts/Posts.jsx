@@ -13,22 +13,30 @@ const Posts = () => {
   useEffect(() => {
     dispatch(getTimelinePosts(user._id));
   });
-  if (!posts) return "No Posts";
   if (params.id) posts = posts.filter((post) => post.userId === params.id);
   posts.sort(function (a, b) {
     const dateA = new Date(a.createdAt),
       dateB = new Date(b.createdAt);
     return dateB - dateA;
   });
-  return (
-    <div className="Posts">
-      {loading
-        ? "Fetching posts...."
-        : posts.map((post, id) => {
-            return <Post data={post} key={id} />;
-          })}
-    </div>
-  );
+  if (posts.length === 0) {
+    return (
+      <div className="noposts">
+        {" "}
+        {"<-"} No posts {"->"}{" "}
+      </div>
+    );
+  } else {
+    return (
+      <div className="Posts">
+        {loading
+          ? "Fetching posts...."
+          : posts.map((post, id) => {
+              return <Post data={post} key={id} />;
+            })}
+      </div>
+    );
+  }
 };
 
 export default Posts;

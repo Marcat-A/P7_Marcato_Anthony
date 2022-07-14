@@ -44,25 +44,12 @@ const authReducer = (
       };
 
     case "FOLLOW_START":
-      // return {
-      //   ...state,
-      //   authData: {
-      //     ...state.authData,
-      //     user: {
-      //       ...state.authData.user,
-      //       following: [...state.authData.user.following, action.data],
-      //     },
-      //   },
-      // };
       return { ...state, error: false, following: true };
 
     case "FOLLOW_SUCCESS":
       const userLiked = state.authData.find((user) => {
-        console.log(user);
         return action.person !== user._id;
       });
-
-      console.log("blabla");
 
       userLiked.following.push(action.data.userId);
 
