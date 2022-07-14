@@ -1,10 +1,10 @@
-# Groupomania P7 - Anthony Marcato
+#  Groupomania P7 - Anthony Marcato
 
-## Introduction
+## *Introduction*
 
 Réalisation de la partie 7 de la formation OpenClassRooms qui consiste à faire un réseau social d'entreprise "Groupomania".
 
-## Spécifications
+## *Spécifications*
 
 ### Une page de connexion
 
@@ -34,10 +34,47 @@ Dans le but de pouvoir faire de la modération si nécessaire, il faudra créer
 un utilisateur “administrateur” ; celui-ci aura les droits de modification /
 suppression sur tous les posts du réseau social.
 
-## Identité graphique
+## *Identité graphique*
 
 Police d’écriture : Lato.
 Couleurs :
 ● Primaire : - ![#fd2d01](https://via.placeholder.com/15/fd2d01/000000?text=+) `#fd2d01`
 ● Secondaire : - ![#ffd7d7](https://via.placeholder.com/15/ffd7d7/000000?text=+) `#ffd7d7`
 ● Tertiaire : ![#4E5166](https://via.placeholder.com/15/4E5166/000000?text=+) `#4E5166`
+
+---
+
+## *Installation*
+
+Créez un fichier .env dans le dossier "server" et ajoutez les clés suivantes: 
+
+PORT=5000
+MONGO_DB="mongodb+srv://marcat:b9b08cd7@cluster0.yubck.mongodb.net/SocialMedia?retryWrites=true&w=majority"
+SECRET_TOKEN="ANY-SECRET-TOKEN"
+REACT_APP_PUBLIC_FOLDER = http://localhost:5000/
+CRYPTOJS_EMAIL_KEY="ANY-SECRET-KEY"
+
+--
+
+Créez un fichier .env dans le dossier "client" et ajoutez la clé suivante:
+
+REACT_APP_PUBLIC_FOLDER = http://localhost:5000/images/
+
+Ouvrez un nouveau terminal et tapez les commandes suivantes: 
+
+   - cd server
+- - npm install
+- - npm start
+
+
+
+Ouvrez un nouveau terminal et tapez les commandes suivantes: 
+
+- cd client
+- - npm install
+- - npm start
+
+
+--
+
+## *Enjoy :)*
