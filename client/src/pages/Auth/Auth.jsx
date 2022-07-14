@@ -13,6 +13,7 @@ const Auth = () => {
   const [data, setData] = useState({
     firstname: "",
     lastname: "",
+    email: "",
     password: "",
     confirmpass: "",
     username: "",
@@ -42,6 +43,7 @@ const Auth = () => {
     setData({
       firstname: "",
       lastname: "",
+      email: "",
       password: "",
       confirmpass: "",
       username: "",
@@ -77,13 +79,24 @@ const Auth = () => {
           )}
 
           <div>
+            {isSignUp && (
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                className="infoInput"
+                onChange={handleChange}
+                value={data.username}
+              />
+            )}
+
             <input
               type="text"
-              name="username"
-              placeholder="Username"
+              name="email"
+              placeholder="Email"
               className="infoInput"
               onChange={handleChange}
-              value={data.username}
+              value={data.email}
             />
           </div>
           <div>
