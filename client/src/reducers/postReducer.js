@@ -119,7 +119,7 @@ const postReducer = (
         posts: [...postNoComment, postComment],
       };
     default:
-      return state;
+      return { ...state, posts: [...state.posts] };
   }
 };
 

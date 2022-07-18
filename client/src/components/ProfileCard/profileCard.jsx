@@ -4,11 +4,13 @@ import Profile from "../../img/profilImage.png";
 import "./profileCard.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useIntl } from "react-intl";
 
 const ProfileCard = ({ location }) => {
   const { user } = useSelector((state) => state.authReducer.authData);
   const posts = useSelector((state) => state.postReducer.posts);
   const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
+  const intl = useIntl();
   return (
     <div className="ProfileCard">
       <div className="ProfileImages">
@@ -25,7 +27,7 @@ const ProfileCard = ({ location }) => {
       </div>
       <div className="ProfileName">
         <span>{user.firstname + " " + user.lastname}</span>
-        <span>{user.worksAt ? user.worksAt : "Write about yourself..."}</span>
+        <span>{user.worksAt ? user.worksAt : "Speak About yourself..."}</span>
       </div>
       <div className="followStatus">
         <hr />
@@ -57,7 +59,9 @@ const ProfileCard = ({ location }) => {
         ""
       ) : (
         <span>
-          <Link to={`/profile/${user._id}`}>My Profile</Link>
+          <Link to={`/profile/${user._id}`}>
+            {intl.formatMessage({ id: "profileCard.myProfile" })}
+          </Link>
         </span>
       )}
     </div>

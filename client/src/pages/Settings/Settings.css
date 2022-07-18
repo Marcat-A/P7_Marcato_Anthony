@@ -1,0 +1,35 @@
+.Settings {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 18rem auto 18rem;
+      grid-template-columns: 18rem auto 18rem;
+  gap: 1rem;
+}
+
+.Settings .lang {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1em;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Settings .lang > h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2em;
+  padding-top: 2em;
+  font-size: 1.5em;
+}
+
+.Settings .lang .langButton {
+  margin-bottom: 1em;
+  font-size: 1.1em;
+}
+/*# sourceMappingURL=Settings.css.map */

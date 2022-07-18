@@ -24,26 +24,32 @@ const PostUpdate = ({ data, updateOpened, setUpdateOpened }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const updatedPost = {
+      image: data.image,
       desc: desc.current.value,
       _id: data._id,
     };
-    console.log(image);
     const newImg = new FormData();
-    const filename = Date.now() + image.name;
-    newImg.append("name", filename);
-    newImg.append("file", image);
-    {
-      filename
-        ? (updatedPost.image = filename)
-        : (updatedPost.image = data.image);
-    }
-    try {
-      dispatch(uploadImage(newImg));
-    } catch (error) {
-      console.log(error);
+
+    const hasNewImage = image !== undefined;
+
+    console.log({ image, data });
+
+    if (hasNewImage) {
+      const filename = Date.now() + image.name;
+      newImg.append("name", filename);
+      newImg.append("file", image);
+
+      updatedPost.image = filename;
+
+      try {
+        dispatch(uploadImage(newImg));
+      } catch (error) {
+        console.log(error);
+      }
     }
 
     dispatch(updatePost(data._id, updatedPost));
+    setUpdateOpened(false);
   };
   return (
     <div className="PostShare">

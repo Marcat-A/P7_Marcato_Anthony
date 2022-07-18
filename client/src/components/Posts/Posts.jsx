@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
-import { getTimelinePosts } from "../../actions/PostAction";
+import React from "react";
+// import { getTimelinePosts } from "../../actions/PostAction";
 import Post from "../Post/Post";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import "./Posts.css";
 import { useParams } from "react-router-dom";
 
 const Posts = () => {
   const params = useParams();
-  const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.authReducer.authData);
+  // const dispatch = useDispatch();
+  // const { user } = useSelector((state) => state.authReducer.authData);
   let { posts, loading } = useSelector((state) => state.postReducer);
-  useEffect(() => {
-    dispatch(getTimelinePosts(user._id));
-  });
+  // useEffect(() => {
+  //   dispatch(getTimelinePosts(user._id));
+  // });
   if (params.id) posts = posts.filter((post) => post.userId === params.id);
   posts.sort(function (a, b) {
     const dateA = new Date(a.createdAt),
@@ -22,7 +22,6 @@ const Posts = () => {
   if (posts.length === 0) {
     return (
       <div className="noposts">
-        {" "}
         {"<-"} No posts {"->"}{" "}
       </div>
     );

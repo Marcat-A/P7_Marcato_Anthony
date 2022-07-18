@@ -3,6 +3,7 @@ import {
   commentPost,
   createPost,
   deletePost,
+  // getAllPosts,
   getPost,
   getTimelinePosts,
   likePost,
@@ -12,6 +13,7 @@ const router = express.Router();
 
 router.post("/", createPost);
 router.get("/", getPost);
+// router.get("/", getAllPosts);
 router.put("/:id", updatePost);
 router.delete("/:id", deletePost);
 router.put("/:id/like", likePost);

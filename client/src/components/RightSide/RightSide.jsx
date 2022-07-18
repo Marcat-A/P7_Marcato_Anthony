@@ -5,7 +5,7 @@ import { faArchway, faGear } from "@fortawesome/free-solid-svg-icons";
 import "./RightSide.css";
 import ShareModal from "../ShareModal/ShareModal";
 
-const RightSide = () => {
+const RightSide = ({ location }) => {
   const [modalOpened, setModalOpened] = useState(false);
   return (
     <div className="RightSide">
@@ -13,13 +13,24 @@ const RightSide = () => {
         <Link to="../home">
           <FontAwesomeIcon icon={faArchway} />
         </Link>
-        <FontAwesomeIcon icon={faGear} />
+        <Link to="../settings">
+          <FontAwesomeIcon icon={faGear} />
+        </Link>
       </div>
       {/* <TrendCard /> */}
-      <button className="btn r-btn" onClick={() => setModalOpened(true)}>
-        Share
-      </button>
-      <ShareModal modalOpened={modalOpened} setModalOpened={setModalOpened} />
+      {location === "settings" ? (
+        ""
+      ) : (
+        <>
+          <button className="btn r-btn" onClick={() => setModalOpened(true)}>
+            Share
+          </button>
+          <ShareModal
+            modalOpened={modalOpened}
+            setModalOpened={setModalOpened}
+          />
+        </>
+      )}
     </div>
   );
 };
