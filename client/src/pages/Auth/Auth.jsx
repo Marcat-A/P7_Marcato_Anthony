@@ -4,11 +4,13 @@ import Logo from "../../img/icon-left-font.png";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logIn, signUp } from "../../actions/AuthAction";
+import { useIntl } from "react-intl";
 
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(true);
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.authReducer.loading);
+  const intl = useIntl();
 
   const [data, setData] = useState({
     firstname: "",
@@ -56,13 +58,17 @@ const Auth = () => {
       </div>
       <div className="a-right">
         <form action="" className="infoForm authForm" onSubmit={handleSubmit}>
-          <h3>{isSignUp ? "Sign Up" : "Log In"}</h3>
+          <h3>
+            {isSignUp
+              ? intl.formatMessage({ id: "auth.signUp" })
+              : intl.formatMessage({ id: "auth.logIn" })}
+          </h3>
           {isSignUp && (
             <div>
               <input
                 type="text"
                 name="firstname"
-                placeholder="First Name"
+                placeholder={intl.formatMessage({ id: "auth.firstName" })}
                 className="infoInput"
                 onChange={handleChange}
                 value={data.firstname}
@@ -70,7 +76,7 @@ const Auth = () => {
               <input
                 type="text"
                 name="lastname"
-                placeholder="Last Name"
+                placeholder={intl.formatMessage({ id: "auth.lastName" })}
                 className="infoInput"
                 onChange={handleChange}
                 value={data.lastname}
@@ -83,7 +89,7 @@ const Auth = () => {
               <input
                 type="text"
                 name="username"
-                placeholder="Username"
+                placeholder={intl.formatMessage({ id: "auth.username" })}
                 className="infoInput"
                 onChange={handleChange}
                 value={data.username}
@@ -104,7 +110,7 @@ const Auth = () => {
               type="password"
               name="password"
               className="infoInput"
-              placeholder="Password"
+              placeholder={intl.formatMessage({ id: "auth.password" })}
               onChange={handleChange}
               value={data.password}
             />
@@ -113,7 +119,7 @@ const Auth = () => {
                 type="password"
                 name="confirmpass"
                 className="infoInput"
-                placeholder="Confirm Password"
+                placeholder={intl.formatMessage({ id: "auth.confirmPass" })}
                 onChange={handleChange}
                 value={data.confirmpass}
               />
@@ -126,7 +132,7 @@ const Auth = () => {
               fontSize: "13px",
             }}
           >
-            * Confirm password is not the same
+            * {intl.formatMessage({ id: "auth.error" })}
           </span>
           <div>
             <span
@@ -137,13 +143,17 @@ const Auth = () => {
               }}
             >
               {isSignUp
-                ? "Alredy have an account ??"
-                : "Don't have an account ??"}{" "}
+                ? intl.formatMessage({ id: "auth.alredyAccount" })
+                : intl.formatMessage({ id: "auth.dontHaveAccount" })}
             </span>
           </div>
           <div id="errors"></div>
           <button className="btn info-btn" type="submit" disabled={loading}>
-            {loading ? "Loading..." : isSignUp ? "Signup" : "Log In"}
+            {loading
+              ? "Loading..."
+              : isSignUp
+              ? intl.formatMessage({ id: "auth.signUp" })
+              : intl.formatMessage({ id: "auth.logIn" })}
           </button>
         </form>
       </div>

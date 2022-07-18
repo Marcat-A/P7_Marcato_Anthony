@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import * as UserApi from "../../api/UserRequest";
 import { logout } from "../../actions/AuthAction";
+import { useIntl } from "react-intl";
 
 const InfoCard = () => {
   const [modalOpened, setModalOpened] = useState(false);
@@ -16,6 +17,7 @@ const InfoCard = () => {
   const params = useParams();
   const profileUserId = params.id;
   const [profileUser, setProfileUser] = useState({});
+  const intl = useIntl();
 
   const { user } = useSelector((state) => state.authReducer.authData);
 
@@ -37,7 +39,7 @@ const InfoCard = () => {
   return (
     <div className="InfoCard">
       <div className="infoHead">
-        <h4>Profile Infos</h4>
+        <h4>{intl.formatMessage({ id: "infoCard.title" })}</h4>
         {user._id === profileUserId ? (
           <div>
             <FontAwesomeIcon
@@ -56,24 +58,24 @@ const InfoCard = () => {
       </div>
       <div className="info">
         <span>
-          <b>Status : </b>
+          <b>{intl.formatMessage({ id: "infoCard.status" })}</b>
         </span>
         <span>{profileUser.relationship}</span>
       </div>
       <div className="info">
         <span>
-          <b>Lives in : </b>
+          <b>{intl.formatMessage({ id: "infoCard.livesIn" })}</b>
         </span>
         <span>{profileUser.livesin}</span>
       </div>
       <div className="info">
         <span>
-          <b>Works at : </b>
+          <b>{intl.formatMessage({ id: "infoCard.worksAt" })}</b>
         </span>
         <span>{profileUser.worksAt}</span>
       </div>
       <button className="btn btn-logout" onClick={handleLogOut}>
-        Logout
+        {intl.formatMessage({ id: "infoCard.logout" })}
       </button>
     </div>
   );

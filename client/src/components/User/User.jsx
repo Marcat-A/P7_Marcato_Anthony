@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useIntl } from "react-intl";
 import { useDispatch, useSelector } from "react-redux";
 import { followUser, unFollowUser } from "../../actions/UserAction";
 import ProfileImg from "../../img/profilImage.png";
@@ -10,6 +11,7 @@ const User = ({ person }) => {
   const [following, setFollowing] = useState(
     person.followers.includes(user._id)
   );
+  const intl = useIntl();
   const dispatch = useDispatch();
   const handleFollow = () => {
     following
@@ -35,7 +37,9 @@ const User = ({ person }) => {
             <span>@{person.username}</span>
           </div>
           <button className="btn fc-btn" onClick={handleFollow}>
-            {following ? "Unfollow" : "Follow"}
+            {following
+              ? intl.formatMessage({ id: "followersCard.unfollow" })
+              : intl.formatMessage({ id: "followersCard.button" })}
           </button>
         </div>
       </div>

@@ -1,5 +1,34 @@
 {
-    "profileCard": {
-        "myProfile":"My Profile"
-    }
+    "profileCard.myProfile":"My Profile",
+    "profileCard.worksAt":"Speak about you...",
+    "followersCard.title":"Persons to follow",
+    "followersCard.button":"Follow",
+    "followersCard.unfollow":"Unfollow",
+    "share.placeholder":"Wassup?",
+    "share.button":"Share",
+    "infoCard.title":"Your Informations",
+    "infoCard.status":"Relations :",
+    "infoCard.livesIn":"Lives In :",
+    "infoCard.worksAt":"Works at :",
+    "infoCard.logout":"Logout",
+    "infoCardModal.firstname":"Firstname",
+    "infoCardModal.lastname":"Lastname",
+    "infoCardModal.worksAt":"Works at",
+    "infoCardModal.livesIn":"Lives In",
+    "infoCardModal.country":"Country",
+    "infoCardModal.relationship":"Relations",
+    "infoCardModal.profileImage":"Profile Image",
+    "infoCardModal.coverImage":"Cover Image",
+    "infoCardModal.update":"Update",
+    "settings.title":"Languages",
+    "auth.signUp":"Sign Up",
+    "auth.logIn":"Log In",
+    "auth.firstName":"Firstname",
+    "auth.lastName":"Lastname",
+    "auth.username":"Username",
+    "auth.password":"Password",
+    "auth.confirmPass":"Confirm password",
+    "auth.alredyAccount":"Alredy got an account ??",
+    "auth.dontHaveAccount":"Don't have an account ??",
+    "auth.error":"Confirm password is not the same"
 }

@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import { faArchway, faGear } from "@fortawesome/free-solid-svg-icons";
 import "./RightSide.css";
 import ShareModal from "../ShareModal/ShareModal";
+import { useIntl } from "react-intl";
 
 const RightSide = ({ location }) => {
+  const intl = useIntl();
   const [modalOpened, setModalOpened] = useState(false);
   return (
     <div className="RightSide">
@@ -23,7 +25,7 @@ const RightSide = ({ location }) => {
       ) : (
         <>
           <button className="btn r-btn" onClick={() => setModalOpened(true)}>
-            Share
+            {intl.formatMessage({ id: "share.button" })}
           </button>
           <ShareModal
             modalOpened={modalOpened}

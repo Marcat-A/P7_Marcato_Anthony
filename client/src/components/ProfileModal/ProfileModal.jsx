@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import "./ProfileModal.css";
 import { uploadImage } from "../../actions/UploadAction";
 import { updateUser } from "../../actions/UserAction";
+import { useIntl } from "react-intl";
 
 function ProfileModal({ modalOpened, setModalOpened, data }) {
   const theme = useMantineTheme();
@@ -15,6 +16,7 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
   const dispatch = useDispatch();
   const param = useParams();
   const { user } = useSelector((state) => state.authReducer.authData);
+  const intl = useIntl();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -75,12 +77,12 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
     >
       {window.matchMedia("(max-width:767px)").matches ? (
         <form action="" className="infoForm">
-          <h3>Your Infos</h3>
+          <h3>{intl.formatMessage({ id: "infoCard.title" })}</h3>
           <input
             type="text"
             className="infoInput"
             name="firstName"
-            placeholder="Firstname"
+            placeholder={intl.formatMessage({ id: "infoCardModal.firstname" })}
             onChange={handleChange}
             value={formData.firstname || ""}
           />
@@ -88,7 +90,7 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
             type="text"
             className="infoInput"
             name="lastName"
-            placeholder="LastName"
+            placeholder={intl.formatMessage({ id: "infoCardModal.lastname" })}
             onChange={handleChange}
             value={formData.lastname || ""}
           />
@@ -96,7 +98,7 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
             type="text"
             className="infoInput"
             name="worksAt"
-            placeholder="Work At"
+            placeholder={intl.formatMessage({ id: "infoCardModal.worksAt" })}
             onChange={handleChange}
             value={formData.worksAt || ""}
           />
@@ -104,7 +106,7 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
             type="text"
             className="infoInput"
             name="livesin"
-            placeholder="Lives In"
+            placeholder={intl.formatMessage({ id: "infoCardModal.livesIn" })}
             onChange={handleChange}
             value={formData.livesin || ""}
           />
@@ -112,7 +114,7 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
             type="text"
             className="infoInput"
             name="country"
-            placeholder="Country"
+            placeholder={intl.formatMessage({ id: "infoCardModal.country" })}
             onChange={handleChange}
             value={formData.country || ""}
           />
@@ -120,27 +122,31 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
             type="text"
             className="infoInput"
             name="relationship"
-            placeholder="Relationship Status"
+            placeholder={intl.formatMessage({
+              id: "infoCardModal.relationship",
+            })}
             onChange={handleChange}
             value={formData.relationship || ""}
           />
-          Profile Image
+          {intl.formatMessage({ id: "infoCardModal.profileImage" })}
           <input type="file" name="profileImage" onChange={onImageChange} />
-          Cover Image
+          {intl.formatMessage({ id: "infoCardModal.coverImage" })}
           <input type="file" name="coverImage" onChange={onImageChange} />
           <button className="btn info-btn" onClick={handleSubmit}>
-            Update
+            {intl.formatMessage({ id: "infoCardModal.update" })}
           </button>
         </form>
       ) : (
         <form action="" className="infoForm">
-          <h3>Your Infos</h3>
+          <h3>{intl.formatMessage({ id: "infoCard.title" })}</h3>
           <div>
             <input
               type="text"
               className="infoInput"
               name="firstName"
-              placeholder="Firstname"
+              placeholder={intl.formatMessage({
+                id: "infoCardModal.firstname",
+              })}
               onChange={handleChange}
               value={formData.firstname || ""}
             />
@@ -148,7 +154,7 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
               type="text"
               className="infoInput"
               name="lastName"
-              placeholder="LastName"
+              placeholder={intl.formatMessage({ id: "infoCardModal.lastname" })}
               onChange={handleChange}
               value={formData.lastname || ""}
             />
@@ -158,7 +164,7 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
               type="text"
               className="infoInput"
               name="worksAt"
-              placeholder="Work At"
+              placeholder={intl.formatMessage({ id: "infoCardModal.worksAt" })}
               onChange={handleChange}
               value={formData.worksAt || ""}
             />
@@ -168,7 +174,7 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
               type="text"
               className="infoInput"
               name="livesin"
-              placeholder="Lives In"
+              placeholder={intl.formatMessage({ id: "infoCardModal.livesIn" })}
               onChange={handleChange}
               value={formData.livesin || ""}
             />
@@ -176,7 +182,7 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
               type="text"
               className="infoInput"
               name="country"
-              placeholder="Country"
+              placeholder={intl.formatMessage({ id: "infoCardModal.country" })}
               onChange={handleChange}
               value={formData.country || ""}
             />
@@ -186,19 +192,21 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
               type="text"
               className="infoInput"
               name="relationship"
-              placeholder="Relationship Status"
+              placeholder={intl.formatMessage({
+                id: "infoCardModal.relationship",
+              })}
               onChange={handleChange}
               value={formData.relationship || ""}
             />
           </div>
           <div>
-            Profile Image
+            {intl.formatMessage({ id: "infoCardModal.profileImage" })}
             <input type="file" name="profileImage" onChange={onImageChange} />
-            Cover Image
+            {intl.formatMessage({ id: "infoCardModal.coverImage" })}
             <input type="file" name="coverImage" onChange={onImageChange} />
           </div>
           <button className="btn info-btn" onClick={handleSubmit}>
-            Update
+            {intl.formatMessage({ id: "infoCardModal.update" })}
           </button>
         </form>
       )}

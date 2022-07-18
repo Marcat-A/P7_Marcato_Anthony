@@ -27,7 +27,11 @@ const ProfileCard = ({ location }) => {
       </div>
       <div className="ProfileName">
         <span>{user.firstname + " " + user.lastname}</span>
-        <span>{user.worksAt ? user.worksAt : "Speak About yourself..."}</span>
+        <span>
+          {user.worksAt
+            ? user.worksAt
+            : intl.formatMessage({ id: "profileCard.worksAt" })}
+        </span>
       </div>
       <div className="followStatus">
         <hr />
