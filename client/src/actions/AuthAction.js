@@ -9,7 +9,6 @@ export const logIn = (formData, navigate) => async (dispatch) => {
   } catch (error) {
     const zone = document.getElementById("errors");
     zone.innerHTML = error.request.response;
-    console.log(error);
     dispatch({ type: "AUTH_FAIL" });
   }
 };

@@ -25,6 +25,15 @@
     width: 6rem;
     height: 2rem;
     align-self: flex-end;
+    border-radius: 10px;
+    border: 1px solid red;
+    background-color: white;
+    color: var(--primary-color);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
 

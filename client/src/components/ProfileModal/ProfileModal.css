@@ -44,6 +44,18 @@
   height: 2rem;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  border-radius: 10px;
+  border: 1px solid red;
+  background-color: white;
+  color: var(--primary-color);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.infoForm .info-btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 @media (max-width: 767px) {

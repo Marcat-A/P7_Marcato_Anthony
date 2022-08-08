@@ -32,8 +32,6 @@ const PostUpdate = ({ data, updateOpened, setUpdateOpened }) => {
 
     const hasNewImage = image !== undefined;
 
-    console.log({ image, data });
-
     if (hasNewImage) {
       const filename = Date.now() + image.name;
       newImg.append("name", filename);

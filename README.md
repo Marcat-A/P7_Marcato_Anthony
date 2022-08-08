@@ -38,9 +38,9 @@ suppression sur tous les posts du réseau social.
 
 Police d’écriture : Lato.
 Couleurs :
-● Primaire : - ![#fd2d01](https://via.placeholder.com/15/fd2d01/000000?text=+) `#fd2d01`
-● Secondaire : - ![#ffd7d7](https://via.placeholder.com/15/ffd7d7/000000?text=+) `#ffd7d7`
-● Tertiaire : ![#4E5166](https://via.placeholder.com/15/4E5166/000000?text=+) `#4E5166`
+● Primaire : - #FD2D01
+● Secondaire : - #FFD7D7
+● Tertiaire : - #4E5166
 
 ---
 
