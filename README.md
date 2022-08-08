@@ -77,4 +77,10 @@ Ouvrez un nouveau terminal et tapez les commandes suivantes:
 
 --
 
+--
+
+Admin : 
+- admin@admin.com
+- Admin3810
+
 ## *Enjoy :)*
